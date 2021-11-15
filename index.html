@@ -1,0 +1,72 @@
+<head>
+  <meta charset="UTF-8">
+  <html lang="pt-br">
+
+  </html>
+  <title>Trabalho 1 de sistemas distríbuidos</title>
+</head>
+
+<body>
+  <h1>Trabalho 1 do curso CI1088 - Sistemas Distribuídos</h1>
+  <p>O trabalho consiste na implementação de uma simulação usando SMPL do algoritmo VCube versão 2 apresentado em aula.
+  </p>
+  <p>
+    Para verificar o enunciado do trabalho verifique o <a href="https://www.inf.ufpr.br/elias/sisdis/">site do
+      professor</a>.
+  </p>
+  <p>
+    Como parte do processo de desenvolvimento do trabalho foram propostas 5 tarefas, sendo a tarefa 0 executada em sala.
+    As minhas implementações estão listadas a seguir.
+  </p>
+
+  <h2>Tarefa 1</h2>
+  <p>
+    Fazer cada um dos processos testar o seguinte no anel. Implemente o teste com a função status() do SMPL e imprimir
+    (printf) o resultado de cada teste executado. Por exemplo: “O processo i testou o processo j correto no tempo tal.”
+  </p>
+  <ul>
+    <li><a href="tarefa_1/tempo.c.txt">Código</a></li>
+    <li><a href="tarefa_1/saida.txt">Log da execução</a></li>
+  </ul>
+
+  <h2>Tarefa 2</h2>
+  <p>
+    Cada processo correto executa testes até achar outro processo correto. Lembre-se de tratar o caso em que todos os
+    demais processos estão falhos. Imprimir os testes e resultados.
+  </p>
+  <ul>
+    <li><a href="tarefa_2/tempo.c.txt">Código</a></li>
+    <li><a href="tarefa_2/saida.txt">Log da execução</a></li>
+  </ul>
+
+  <h2>Tarefa 3</h2>
+  <p>
+    Cada processo mantém localmente o vetor State[N].
+    Inicializa o State[N] com -1 (indicando estado “unknown”) para todos os demais processos e 0 para o próprio
+    processo.
+    Nesta tarefa ao executar um teste, o processo atualiza a entrada correspondente no vetor State[N].
+    Em cada intervalo de testes, mostre o vetor State[N].
+  </p>
+  <ul>
+    <li><a href="tarefa_3/tempo.c.txt">Código</a></li>
+    <li><a href="tarefa_3/saida.txt">Log da execução</a></li>
+  </ul>
+
+  <h2>Tarefa 4</h2>
+  <p>
+    Quando um processo correto testa outro processo correto obtém as informações de diagnóstico do processo testado
+    sobre todos os processos do sistema exceto aqueles que testou nesta rodada, além do próprio testador.
+  </p>
+  <ul>
+    <li><a href="tarefa_4/tempo.c.txt">Código</a></li>
+    <li><a href="tarefa_4/saida.txt">Log da execução</a></li>
+  </ul>
+
+
+  <h2>VCube V2</h2>
+  <p>
+    A implementação do 
+  </p>
+  <a href="trabalho/vcube.c.txt">Algoritmo do VCube V2</a>
+
+</body>
