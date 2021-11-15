@@ -65,8 +65,34 @@
 
   <h2>VCube V2</h2>
   <p>
-    A implementação do 
+    A implementação do VCube utiliza o algoritmo para cálculo dos clusters c(i,s) disponibilizado pelo professor na sua
+    página.
+    Para possibilitar seu funcionamento eu implementei o algoritmo de modo que há uma matriz contendo todos os clusteres
+    para todos os processos/nós.
+    A partir dessa matriz que é calculada uma vez, antes de realizar seus testes, cada processo i verifica quais
+    processos deveria testar para o cluster s.
+    Por exemplo, o processo 0 deve testar o 1 para o cluster 1. No caso do cluster 2 ele deve testar 2, mas caso o 1
+    esteja falho, deve testar o 3 também.
+    Dessa forma, como descrito no algoritmo VCube, caso tenha ocorrido alguma falha em 3 ela também será dectectada.
   </p>
-  <a href="trabalho/vcube.c.txt">Algoritmo do VCube V2</a>
 
+  <p>
+    O vetor state, de cada nodo/processo, é iniciado com -1 para todos os índices de processos que não o próprio.
+    Quando ocorre a primeira leitura de status o valor é modificado para 0. Quando ocorre algum evento de falha ou
+    recuperação o valor é somado em 1.
+    Assim sendo, mesmo que um sistema seja iniciado como falha os outros conseguirão detectar. Outra consequência dessa
+    modelagem é que podemos contabilizar
+    a quantidade de falhas detectadas e a operação de "resto da divisão por 2" diz se o nodo está falho ou correto. Caso
+    o resto seja 0 o nodo está correto, caso contrário está falho.
+  </p>
+  <p>
+    Para cada intervalo de testes o processo i realiza o teste para todos os log2(n) clusters que deve verficar.
+  </p>
+
+  <ul>
+    <li><a href="trabalho/vcube.c.txt">Algoritmo do VCube V2</a></li>
+    <li><a href="trabalho/saida.txt">Log de testes para N = 8 com uma falha</a></li>
+    <li><a href="trabalho/saida_2.txt">Log de testes para N = 8 com duas falhas em instantes distintos</a></li>
+    <li><a href="trabalho/saida_3.txt">Log de testes para N = 13 com uma falha</a></li>
+  </ul>
 </body>

@@ -1,0 +1,23 @@
+Número de processos: 5
+O nodo 0 testou o nodo 1 correto no tempo 30.0
+O nodo 1 testou o nodo 2 correto no tempo 30.0
+O nodo 2 testou o nodo 3 correto no tempo 30.0
+O nodo 3 testou o nodo 4 correto no tempo 30.0
+O nodo 4 testou o nodo 0 correto no tempo 30.0
+O nodo 1 falhou no tempo 31.0
+O nodo 0 testou o nodo 1 falho no tempo 60.0
+O nodo 2 testou o nodo 3 correto no tempo 60.0
+O nodo 3 testou o nodo 4 correto no tempo 60.0
+O nodo 4 testou o nodo 0 correto no tempo 60.0
+O nodo 1 recuperou no tempo 61.0
+O nodo 0 testou o nodo 1 correto no tempo 90.0
+O nodo 2 testou o nodo 3 correto no tempo 90.0
+O nodo 3 testou o nodo 4 correto no tempo 90.0
+O nodo 4 testou o nodo 0 correto no tempo 90.0
+O nodo 1 testou o nodo 2 correto no tempo 91.0
+O nodo 0 testou o nodo 1 correto no tempo 120.0
+O nodo 2 testou o nodo 3 correto no tempo 120.0
+O nodo 3 testou o nodo 4 correto no tempo 120.0
+O nodo 4 testou o nodo 0 correto no tempo 120.0
+O nodo 1 testou o nodo 2 correto no tempo 121.0
+O nodo 0 testou o nodo 1 correto no tempo 150.0

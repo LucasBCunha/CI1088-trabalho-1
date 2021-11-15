@@ -1,0 +1,429 @@
+/*
+  Programa: programa que simula a execução do algoritmo VCube V2.
+    Autor: Lucas Braz Cunha para o trabalho de de Sistemas Distríbuidos ERE4
+    Feito a partir do arquivo tempo.c apresentado em aula.
+    Data da última modificação: 15/11/2021
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "smpl.h"
+#include <math.h>
+
+/*
+  Definições para o cálculo de cluster
+*/
+
+#define POW_2(num) (1 << (num))
+#define VALID_J(j, s) ((POW_2(s - 1)) >= j)
+
+/* |-- node_set.h */
+typedef struct node_set
+{
+  int *nodes;
+  ssize_t size;
+  ssize_t offset;
+} node_set;
+
+static node_set *set_new(ssize_t size)
+{
+  node_set *new;
+
+  new = (node_set *)malloc(sizeof(node_set));
+  new->nodes = (int *)malloc(sizeof(int) * size);
+  new->size = size;
+  new->offset = 0;
+  return new;
+}
+
+static void set_insert(node_set *nodes, int node)
+{
+  if (nodes == NULL)
+    return;
+  nodes->nodes[nodes->offset++] = node;
+}
+
+static void set_merge(node_set *dest, node_set *source)
+{
+  if (dest == NULL || source == NULL)
+    return;
+  memcpy(&(dest->nodes[dest->offset]), source->nodes, sizeof(int) * source->size);
+  dest->offset += source->size;
+}
+
+static void set_free(node_set *nodes)
+{
+  free(nodes->nodes);
+  free(nodes);
+}
+/* node_set.h --| */
+
+node_set *cis(int i, int s)
+{
+  node_set *nodes, *other_nodes;
+  int xor = i ^ POW_2(s - 1);
+  int j;
+
+  /* starting node list */
+  nodes = set_new(POW_2(s - 1));
+
+  /* inserting the first value (i XOR 2^^(s-1)) */
+  set_insert(nodes, xor);
+
+  /* recursion */
+  for (j = 1; j <= s - 1; j++)
+  {
+    other_nodes = cis(xor, j);
+    set_merge(nodes, other_nodes);
+    set_free(other_nodes);
+  }
+  return nodes;
+}
+
+/* ---- Eventos ----*/
+#define test 1   // Um processo testa outro processo
+#define fault 2  // Um processo falha
+#define repair 3 // Um processo se recupera
+
+/* --- Descritor do nodo SMPL --- */
+typedef struct
+{
+  int id; /* Identificador da facility SMPL */
+  //  outras variáveis locais dos processos são declaradas aqui
+  int *state;                /* vetor de estado dos outros nodos/processos */
+  int *current_tested_nodes; /* vetor de nodos que foram testados na execucao corrente */
+} tnodo;
+
+tnodo *nodo;
+
+/* Calcula os nodos que devem ser testados no cluster atual */
+void nodes_to_test_list(int current_token, int *state, int ***clusters_list, int current_cluster, int *test_list)
+{
+  // Algoritmo: verifique os vizinhos do "meu" cluster atual
+  // Verifique para cada um deles, se sou aquele que deve realizar o teste.
+  int add_to_list = 0;
+  int i, j, test_count = 0;
+  int neighbour;
+  // puts("nodes_to_test_list");
+  for (i = 0; clusters_list[current_token][current_cluster][i] > -1; i++)
+  {
+    // printf("Checando vizinhos do processo %d no cluster %d\n", current_token, current_cluster);
+    neighbour = clusters_list[current_token][current_cluster][i];
+    add_to_list = 0;
+    // Evita testar a si mesmo quando o número de processos não é da forma 2^k
+    if (neighbour == current_token)
+    {
+      continue;
+    }
+    for (j = 0; clusters_list[neighbour][current_cluster][j] > -1; j++)
+    {
+      // printf("Checando quem testa o processo %d no cluster %d\n", neighbour, current_cluster);
+      if (clusters_list[neighbour][current_cluster][j] != current_token &&
+          state[neighbour] > 0 &&
+          state[neighbour] % 2 == 0)
+      {
+        add_to_list = 0;
+        // printf("Será testado por %d\n", clusters_list[neighbour][current_cluster][j]);
+        break;
+      }
+      if (clusters_list[neighbour][current_cluster][j] == current_token)
+      {
+        add_to_list = 1;
+        break;
+      }
+    }
+    if (add_to_list)
+    {
+      // printf("Será testado por %d\n", current_token);
+      test_list[test_count] = neighbour;
+      test_count++;
+    }
+  }
+  test_list[test_count] = -1;
+
+  return;
+}
+
+/* Função auxiliar para printar o vetor de states do nodo do indice */
+void print_state(tnodo *nodes, int N, int index)
+{
+  int i;
+  printf("Vetor de status do nodo %d = [", index);
+  for (i = 0; i < N - 1; i++)
+  {
+    printf(" %d,", nodes[index].state[i]);
+  }
+
+  printf(" %d ]\n", nodes[index].state[N - 1]);
+  return;
+}
+
+/*
+  Testa um nodo e faz o output da mensagem
+
+  nodes: array de nodos
+  N: tamanho do array
+  tester_token: indice do processo que realizarah o teste
+  tested_process: indice do processo que serah testado
+  time: instante de tempo em que o teste está sendo realizado
+*/
+int test_node(tnodo *nodes, int N, int tester_token, int tested_process, float time)
+{
+  int test_result;
+  test_result = status(nodes[tested_process].id);
+  if (test_result == 0)
+  {
+    if (nodes[tester_token].state[tested_process] % 2 == 1 || nodes[tester_token].state[tested_process] == -1)
+    {
+      nodes[tester_token].state[tested_process] += 1;
+    }
+    printf("O nodo %d testou o nodo %d correto no tempo %3.1f\n", tester_token, tested_process, time);
+  }
+  else
+  {
+    printf("O nodo %d testou o nodo %d falho no tempo %3.1f\n", tester_token, tested_process, time);
+    if (nodes[tester_token].state[tested_process] == -1)
+    {
+      nodes[tester_token].state[tested_process] += 1;
+    }
+    if (nodes[tester_token].state[tested_process] % 2 == 0)
+    {
+      nodes[tester_token].state[tested_process] += 1;
+    }
+  }
+  print_state(nodes, N, tester_token);
+  return test_result;
+}
+
+/* Inicializa variáveis */
+void initialize(tnodo *nodes, int N, char *fa_name)
+{
+  int i, j;
+  for (i = 0; i < N; i++)
+  {
+    memset(fa_name, '\0', 5);
+    sprintf(fa_name, "%d", i);
+    nodo[i].id = facility(fa_name, 1);
+    nodes[i].state = (int *)malloc(sizeof(int) * N);
+    nodes[i].current_tested_nodes = (int *)malloc(sizeof(int) * N);
+    for (j = 0; j < N; j++)
+    {
+      nodo[i].state[j] = -1; // Unknown state
+      nodes[i].current_tested_nodes[j] = 0;
+    }
+    nodo[i].state[i] = 0;
+  }
+
+  return;
+}
+
+/* Atualiza o vetor de estados com base nas novidades */
+void update_states(tnodo *nodo, int N, int current_node, int next_node)
+{
+  int i;
+  for (i = 0; i < N; ++i)
+  {
+    // removi o condicional de não atualizar infos sobre si mesmo -> i != current_node &&
+    if (nodo[current_node].state[i] < nodo[next_node].state[i])
+    {
+      nodo[current_node].state[i] = nodo[next_node].state[i];
+    }
+  }
+}
+
+void initial_output(int N, int n_clusters)
+{
+  puts("===================================================================================");
+  puts("Inicio da execucao: programa que simula a execução do algoritmo VCube \"V2\"");
+  puts("Lucas Braz Cunha - GRR20165297 - [CI1088] Disciplina Sistemas Distribuídos");
+  puts("===================================================================================");
+  puts("Sobre o vetor states:");
+  puts("Número ímpar => nodo falho");
+  puts("Número par => nodo correto");
+  puts("-1 => estado desconhecido");
+  printf("Número de processos/nós: %d\n", N);
+  printf("Níveis de cluster: %d\n", n_clusters);
+  puts("===================================================================================");
+}
+
+// clusters_list = [lista de nós/processos [lista de cluster [lista de nós no cluster] ] ]
+void load_cluster_matrix(int ***clusters_list, int N, int n_clusters)
+{
+  int i, j, k, count;
+  node_set *cluster_nodes;
+  for (i = 0; i < N; i++)
+  {
+    clusters_list[i] = (int **)malloc(sizeof(int **) * n_clusters);
+    for (j = 0; j < n_clusters; j++)
+    {
+      clusters_list[i][j] = (int *)malloc(sizeof(int) * (N + 1));
+    }
+  }
+  // caminha nos processos
+  for (i = 0; i < N; i++)
+  {
+    // caminha na quantidade de clusters
+    // printf("Calculando para o processo %d:\n", i);
+    for (j = 0; j < n_clusters; j++)
+    {
+      // printf("Calculando cluster %d\n", j);
+      cluster_nodes = cis(i, j + 1);
+      // caminha nos "vizinhos"/integrantes do cluster
+      count = 0;
+      for (k = 0; k < cluster_nodes->size; k++)
+      {
+        if (cluster_nodes->nodes[k] < N)
+        {
+          clusters_list[i][j][count] = cluster_nodes->nodes[k];
+          count++;
+        }
+      }
+      clusters_list[i][j][count] = -1;
+      if (count == 0)
+      {
+        clusters_list[i][j][1] = -1;
+      }
+      set_free(cluster_nodes);
+    }
+  }
+}
+
+void free_cluster_matrix(int ***clusters_list, int N, int n_clusters)
+{
+  int i, j;
+  for (i = 0; i < N; i++)
+  {
+    for (j = 0; j < n_clusters; j++)
+    {
+      free(clusters_list[i][j]);
+    }
+    free(clusters_list[i]);
+  }
+}
+
+void print_clusters(int ***clusters_list, int N, int n_clusters)
+{
+  int i, j, k;
+  printf("===================================================================================\n");
+  puts("Listagem de clusters");
+  for (i = 0; i < N; i++)
+  {
+    printf("Processo %d:\n", i);
+    // caminha na quantidade de clusters
+    for (j = 0; j < n_clusters; j++)
+    {
+      printf("c(%d, %d) = [ ", i, j + 1);
+      // caminha nos "vizinhos"/integrantes do cluster
+      for (k = 0; clusters_list[i][j][k] != -1; k++)
+      {
+        printf("%i ", clusters_list[i][j][k]);
+      }
+      printf("]\n");
+    }
+  }
+  printf("===================================================================================\n");
+}
+
+// Bug atual: não está testando todo mundo do cluster que deveria?
+int main(int argc, char *argv[])
+{
+  static int N, /* número total de processos, recebido da linha de comando */
+      token,    /* o processo que "está executando" em um instante de tempo */
+      event, r, i, s;
+
+  static char fa_name[5]; /* nome da facility */
+  int test_result,        /* resultado do teste */
+      n_clusters;         /* nível máximo de clusters para o N lido */
+  node_set *cluster_nodes;
+  int ***clusters_list; /* Matriz de relacionamento nos clusters */
+  int *test_list;       /* Lista de nodos que devem ser testados nessa iteração */
+
+  if (argc != 2)
+  {
+    puts("Uso correto: tempo <num-nodos>");
+    exit(1);
+  }
+
+  N = atoi(argv[1]);
+  n_clusters = (int)log2(N); // quantidade de nós = 2^indice_cluster
+  if (N > POW_2(n_clusters))
+    n_clusters++;
+  test_list = (int *)malloc(sizeof(int) * ((int)(N / 2.0) + 2));
+  initial_output(N, n_clusters);
+  clusters_list = (int ***)malloc(sizeof(int **) * N);
+  load_cluster_matrix(clusters_list, N, n_clusters);
+  print_clusters(clusters_list, N, n_clusters);
+  smpl(0, "Um exemplo de simulação");
+  reset();
+  stream(1);
+
+  /* --- Inicialização de variáveis --- */
+  nodo = (tnodo *)malloc(sizeof(tnodo) * N);
+  initialize(nodo, N, fa_name);
+
+  /* --- escalonar os eventos --- */
+  for (i = 0; i < N; i++)
+  {
+    schedule(test, 30.0, i); /* estamos escalonando testes para todos os novos (processos) executarem no tempo(t) 30.0*/
+  }
+  schedule(fault, 31.0, 1);  /* o processo 1 falha no tempo 31 */
+  schedule(repair, 61.0, 1); /* o processo 1 recupera no tempo 61 */
+  // schedule(fault, 62.0, 5);  /* o processo 2 falha no tempo 61 */
+  // schedule(repair, 92.0, 5); /* o processo 2 recupera no tempo 92 */
+
+  puts("Iniciando a simulação!\n");
+  /* Loop principal da simulação */
+  while (time() < 160.0)
+  {
+    cause(&event, &token);
+    switch (event)
+    {
+    case test:
+      if (status(nodo[token].id) != 0)
+        break; /* se o testador está falho: ele não testa */
+      for (s = 0; s < n_clusters; s++)
+      {
+        nodes_to_test_list(token, nodo[token].state, clusters_list, s, test_list);
+        printf("O nodo %d testará = [ ", token);
+        for (i = 0; test_list[i] != -1; i++)
+        {
+          printf("%d ", test_list[i]);
+        }
+        printf("]\n");
+        for (i = 0; test_list[i] != -1; i++)
+        {
+          test_result = test_node(nodo, N, token, test_list[i], time());
+          if (test_result == 0)
+          {
+            printf("Pegando atualizações do testado.\n");
+            update_states(nodo, N, token, test_list[i]);
+            print_state(nodo, N, token);
+          }
+        }
+      }
+      schedule(test, 30.0, token);
+      break;
+    case fault:
+      // Nodo "ocupado" -> falho
+      r = request(nodo[token].id, token, 0); /* O request causa uma facility of SMPL para estar "ocupada" */
+      if (r != 0)
+      {
+        puts("Não foi possível falhar o nodo...");
+        break;
+      }
+      printf("O nodo %d falhou no tempo %3.1f\n", token, time());
+      break;
+    case repair:
+      // Nodo não ocupado -> sem-falha
+      release(nodo[token].id, token); /* O release libera a facility SMPL */
+      printf("O nodo %d recuperou no tempo %3.1f\n", token, time());
+      schedule(test, 30.0, token);
+      break;
+    }
+  }
+  free_cluster_matrix(clusters_list, N, n_clusters);
+  free(clusters_list);
+  printf("===================================================================================\n");
+  printf("Fim da simulação!\n");
+  exit(0);
+}

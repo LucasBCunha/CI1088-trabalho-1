@@ -1,0 +1,1239 @@
+===================================================================================
+Inicio da execucao: programa que simula a execução do algoritmo VCube "V2"
+Lucas Braz Cunha - GRR20165297 - [CI1088] Disciplina Sistemas Distribuídos
+===================================================================================
+Sobre o vetor states:
+Número ímpar => nodo falho
+Número par => nodo correto
+-1 => estado desconhecido
+Número de processos/nós: 8
+Níveis de cluster: 3
+Falha do processo 1 em t=31 e recuperacao em t=61
+===================================================================================
+===================================================================================
+Listagem de clusters
+Processo 0:
+c(0, 1) = [ 1 ]
+c(0, 2) = [ 2 3 ]
+c(0, 3) = [ 4 5 6 7 ]
+Processo 1:
+c(1, 1) = [ 0 ]
+c(1, 2) = [ 3 2 ]
+c(1, 3) = [ 5 4 7 6 ]
+Processo 2:
+c(2, 1) = [ 3 ]
+c(2, 2) = [ 0 1 ]
+c(2, 3) = [ 6 7 4 5 ]
+Processo 3:
+c(3, 1) = [ 2 ]
+c(3, 2) = [ 1 0 ]
+c(3, 3) = [ 7 6 5 4 ]
+Processo 4:
+c(4, 1) = [ 5 ]
+c(4, 2) = [ 6 7 ]
+c(4, 3) = [ 0 1 2 3 ]
+Processo 5:
+c(5, 1) = [ 4 ]
+c(5, 2) = [ 7 6 ]
+c(5, 3) = [ 1 0 3 2 ]
+Processo 6:
+c(6, 1) = [ 7 ]
+c(6, 2) = [ 4 5 ]
+c(6, 3) = [ 2 3 0 1 ]
+Processo 7:
+c(7, 1) = [ 6 ]
+c(7, 2) = [ 5 4 ]
+c(7, 3) = [ 3 2 1 0 ]
+===================================================================================
+Iniciando a simulação!
+
+O nodo 0 testará = [ 1 ]
+O nodo 0 testou o nodo 1 correto no tempo 30.0
+Vetor de status do nodo 0 = [ 0, 0, -1, -1, -1, -1, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 0, -1, -1, -1, -1, -1, -1 ]
+O nodo 0 testará = [ 2 3 ]
+O nodo 0 testou o nodo 2 correto no tempo 30.0
+Vetor de status do nodo 0 = [ 0, 0, 0, -1, -1, -1, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 0, 0, -1, -1, -1, -1, -1 ]
+O nodo 0 testou o nodo 3 correto no tempo 30.0
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, -1, -1, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, -1, -1, -1, -1 ]
+O nodo 0 testará = [ 4 5 6 7 ]
+O nodo 0 testou o nodo 4 correto no tempo 30.0
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, 0, -1, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, 0, -1, -1, -1 ]
+O nodo 0 testou o nodo 5 correto no tempo 30.0
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, 0, 0, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, 0, 0, -1, -1 ]
+O nodo 0 testou o nodo 6 correto no tempo 30.0
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, 0, 0, 0, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, 0, 0, 0, -1 ]
+O nodo 0 testou o nodo 7 correto no tempo 30.0
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 0 ]
+O nodo 1 testou o nodo 0 correto no tempo 30.0
+Vetor de status do nodo 1 = [ 0, 0, -1, -1, -1, -1, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 3 2 ]
+O nodo 1 testou o nodo 3 correto no tempo 30.0
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 2 correto no tempo 30.0
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 5 4 7 6 ]
+O nodo 1 testou o nodo 5 correto no tempo 30.0
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 4 correto no tempo 30.0
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 7 correto no tempo 30.0
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 6 correto no tempo 30.0
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 3 ]
+O nodo 2 testou o nodo 3 correto no tempo 30.0
+Vetor de status do nodo 2 = [ -1, -1, 0, 0, -1, -1, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ -1, -1, 0, 0, -1, -1, -1, -1 ]
+O nodo 2 testará = [ 0 1 ]
+O nodo 2 testou o nodo 0 correto no tempo 30.0
+Vetor de status do nodo 2 = [ 0, -1, 0, 0, -1, -1, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 1 correto no tempo 30.0
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 6 7 4 5 ]
+O nodo 2 testou o nodo 6 correto no tempo 30.0
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 7 correto no tempo 30.0
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 4 correto no tempo 30.0
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 5 correto no tempo 30.0
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 2 ]
+O nodo 3 testou o nodo 2 correto no tempo 30.0
+Vetor de status do nodo 3 = [ -1, -1, 0, 0, -1, -1, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 1 0 ]
+O nodo 3 testou o nodo 1 correto no tempo 30.0
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 0 correto no tempo 30.0
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 7 6 5 4 ]
+O nodo 3 testou o nodo 7 correto no tempo 30.0
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 6 correto no tempo 30.0
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 5 correto no tempo 30.0
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 4 correto no tempo 30.0
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 5 ]
+O nodo 4 testou o nodo 5 correto no tempo 30.0
+Vetor de status do nodo 4 = [ -1, -1, -1, -1, 0, 0, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ -1, -1, -1, -1, 0, 0, -1, -1 ]
+O nodo 4 testará = [ 6 7 ]
+O nodo 4 testou o nodo 6 correto no tempo 30.0
+Vetor de status do nodo 4 = [ -1, -1, -1, -1, 0, 0, 0, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ -1, -1, -1, -1, 0, 0, 0, -1 ]
+O nodo 4 testou o nodo 7 correto no tempo 30.0
+Vetor de status do nodo 4 = [ -1, -1, -1, -1, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ -1, -1, -1, -1, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 0 1 2 3 ]
+O nodo 4 testou o nodo 0 correto no tempo 30.0
+Vetor de status do nodo 4 = [ 0, -1, -1, -1, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 1 correto no tempo 30.0
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 2 correto no tempo 30.0
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 3 correto no tempo 30.0
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 4 ]
+O nodo 5 testou o nodo 4 correto no tempo 30.0
+Vetor de status do nodo 5 = [ -1, -1, -1, -1, 0, 0, -1, -1 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 7 6 ]
+O nodo 5 testou o nodo 7 correto no tempo 30.0
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 6 correto no tempo 30.0
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 1 0 3 2 ]
+O nodo 5 testou o nodo 1 correto no tempo 30.0
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 0 correto no tempo 30.0
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 3 correto no tempo 30.0
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 2 correto no tempo 30.0
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 7 ]
+O nodo 6 testou o nodo 7 correto no tempo 30.0
+Vetor de status do nodo 6 = [ -1, -1, -1, -1, -1, -1, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ -1, -1, -1, -1, -1, -1, 0, 0 ]
+O nodo 6 testará = [ 4 5 ]
+O nodo 6 testou o nodo 4 correto no tempo 30.0
+Vetor de status do nodo 6 = [ -1, -1, -1, -1, 0, -1, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 5 correto no tempo 30.0
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 2 3 0 1 ]
+O nodo 6 testou o nodo 2 correto no tempo 30.0
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 3 correto no tempo 30.0
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 0 correto no tempo 30.0
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 1 correto no tempo 30.0
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 6 ]
+O nodo 7 testou o nodo 6 correto no tempo 30.0
+Vetor de status do nodo 7 = [ -1, -1, -1, -1, -1, -1, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 5 4 ]
+O nodo 7 testou o nodo 5 correto no tempo 30.0
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 4 correto no tempo 30.0
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 3 2 1 0 ]
+O nodo 7 testou o nodo 3 correto no tempo 30.0
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 2 correto no tempo 30.0
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 1 correto no tempo 30.0
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 0 correto no tempo 30.0
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 falhou no tempo 31.0
+O nodo 0 testará = [ 1 ]
+O nodo 0 testou o nodo 1 falho no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 2 3 ]
+O nodo 0 testou o nodo 2 correto no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 3 correto no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 4 5 6 7 ]
+O nodo 0 testou o nodo 4 correto no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 5 correto no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 6 correto no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 7 correto no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 3 ]
+O nodo 2 testou o nodo 3 correto no tempo 60.0
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 0 1 ]
+O nodo 2 testou o nodo 0 correto no tempo 60.0
+Vetor de status do nodo 2 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 1 falho no tempo 60.0
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 6 7 4 5 ]
+O nodo 2 testou o nodo 6 correto no tempo 60.0
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 7 correto no tempo 60.0
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 4 correto no tempo 60.0
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 5 correto no tempo 60.0
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 2 ]
+O nodo 3 testou o nodo 2 correto no tempo 60.0
+Vetor de status do nodo 3 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 1 0 ]
+O nodo 3 testou o nodo 1 falho no tempo 60.0
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 0 correto no tempo 60.0
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 7 6 5 4 ]
+O nodo 3 testou o nodo 7 correto no tempo 60.0
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 6 correto no tempo 60.0
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 5 correto no tempo 60.0
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 4 correto no tempo 60.0
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 5 ]
+O nodo 4 testou o nodo 5 correto no tempo 60.0
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 6 7 ]
+O nodo 4 testou o nodo 6 correto no tempo 60.0
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 7 correto no tempo 60.0
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 0 1 2 3 ]
+O nodo 4 testou o nodo 0 correto no tempo 60.0
+Vetor de status do nodo 4 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 1 falho no tempo 60.0
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 2 correto no tempo 60.0
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 3 correto no tempo 60.0
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 4 ]
+O nodo 5 testou o nodo 4 correto no tempo 60.0
+Vetor de status do nodo 5 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 7 6 ]
+O nodo 5 testou o nodo 7 correto no tempo 60.0
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 6 correto no tempo 60.0
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 1 0 3 2 ]
+O nodo 5 testou o nodo 1 falho no tempo 60.0
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 0 correto no tempo 60.0
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 3 correto no tempo 60.0
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 2 correto no tempo 60.0
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 7 ]
+O nodo 6 testou o nodo 7 correto no tempo 60.0
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 4 5 ]
+O nodo 6 testou o nodo 4 correto no tempo 60.0
+Vetor de status do nodo 6 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 5 correto no tempo 60.0
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 2 3 0 1 ]
+O nodo 6 testou o nodo 2 correto no tempo 60.0
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 3 correto no tempo 60.0
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 0 correto no tempo 60.0
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 1 falho no tempo 60.0
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 6 ]
+O nodo 7 testou o nodo 6 correto no tempo 60.0
+Vetor de status do nodo 7 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 5 4 ]
+O nodo 7 testou o nodo 5 correto no tempo 60.0
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 4 correto no tempo 60.0
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 3 2 1 0 ]
+O nodo 7 testou o nodo 3 correto no tempo 60.0
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 2 correto no tempo 60.0
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 1 falho no tempo 60.0
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 0 correto no tempo 60.0
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 recuperou no tempo 61.0
+O nodo 0 testará = [ 1 ]
+O nodo 0 testou o nodo 1 correto no tempo 90.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 2 3 ]
+O nodo 0 testou o nodo 2 correto no tempo 90.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 3 correto no tempo 90.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 4 5 6 7 ]
+O nodo 0 testou o nodo 4 correto no tempo 90.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 5 correto no tempo 90.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 6 correto no tempo 90.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 7 correto no tempo 90.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 3 ]
+O nodo 2 testou o nodo 3 correto no tempo 90.0
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 0 1 ]
+O nodo 2 testou o nodo 0 correto no tempo 90.0
+Vetor de status do nodo 2 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 1 correto no tempo 90.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 6 7 4 5 ]
+O nodo 2 testou o nodo 6 correto no tempo 90.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 7 correto no tempo 90.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 4 correto no tempo 90.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 5 correto no tempo 90.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 2 ]
+O nodo 3 testou o nodo 2 correto no tempo 90.0
+Vetor de status do nodo 3 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 1 0 ]
+O nodo 3 testou o nodo 1 correto no tempo 90.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 0 correto no tempo 90.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 7 6 5 4 ]
+O nodo 3 testou o nodo 7 correto no tempo 90.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 6 correto no tempo 90.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 5 correto no tempo 90.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 4 correto no tempo 90.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 5 ]
+O nodo 4 testou o nodo 5 correto no tempo 90.0
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 6 7 ]
+O nodo 4 testou o nodo 6 correto no tempo 90.0
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 7 correto no tempo 90.0
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 0 1 2 3 ]
+O nodo 4 testou o nodo 0 correto no tempo 90.0
+Vetor de status do nodo 4 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 1 correto no tempo 90.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 2 correto no tempo 90.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 3 correto no tempo 90.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 4 ]
+O nodo 5 testou o nodo 4 correto no tempo 90.0
+Vetor de status do nodo 5 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 7 6 ]
+O nodo 5 testou o nodo 7 correto no tempo 90.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 6 correto no tempo 90.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 1 0 3 2 ]
+O nodo 5 testou o nodo 1 correto no tempo 90.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 0 correto no tempo 90.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 3 correto no tempo 90.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 2 correto no tempo 90.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 7 ]
+O nodo 6 testou o nodo 7 correto no tempo 90.0
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 4 5 ]
+O nodo 6 testou o nodo 4 correto no tempo 90.0
+Vetor de status do nodo 6 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 5 correto no tempo 90.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 2 3 0 ]
+O nodo 6 testou o nodo 2 correto no tempo 90.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 3 correto no tempo 90.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 0 correto no tempo 90.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 6 ]
+O nodo 7 testou o nodo 6 correto no tempo 90.0
+Vetor de status do nodo 7 = [ 0, 1, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 5 4 ]
+O nodo 7 testou o nodo 5 correto no tempo 90.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 4 correto no tempo 90.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 3 2 0 ]
+O nodo 7 testou o nodo 3 correto no tempo 90.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 2 correto no tempo 90.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 0 correto no tempo 90.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 0 ]
+O nodo 1 testou o nodo 0 correto no tempo 91.0
+Vetor de status do nodo 1 = [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 3 2 ]
+O nodo 1 testou o nodo 3 correto no tempo 91.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 2 correto no tempo 91.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 5 4 7 6 ]
+O nodo 1 testou o nodo 5 correto no tempo 91.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 4 correto no tempo 91.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 7 correto no tempo 91.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 6 correto no tempo 91.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 1 ]
+O nodo 0 testou o nodo 1 correto no tempo 120.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 2 3 ]
+O nodo 0 testou o nodo 2 correto no tempo 120.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 3 correto no tempo 120.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 4 5 6 7 ]
+O nodo 0 testou o nodo 4 correto no tempo 120.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 5 correto no tempo 120.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 6 correto no tempo 120.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 7 correto no tempo 120.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 3 ]
+O nodo 2 testou o nodo 3 correto no tempo 120.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 0 ]
+O nodo 2 testou o nodo 0 correto no tempo 120.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 6 7 4 5 ]
+O nodo 2 testou o nodo 6 correto no tempo 120.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 7 correto no tempo 120.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 4 correto no tempo 120.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 5 correto no tempo 120.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 2 ]
+O nodo 3 testou o nodo 2 correto no tempo 120.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 1 0 ]
+O nodo 3 testou o nodo 1 correto no tempo 120.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 0 correto no tempo 120.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 7 6 5 4 ]
+O nodo 3 testou o nodo 7 correto no tempo 120.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 6 correto no tempo 120.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 5 correto no tempo 120.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 4 correto no tempo 120.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 5 ]
+O nodo 4 testou o nodo 5 correto no tempo 120.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 6 7 ]
+O nodo 4 testou o nodo 6 correto no tempo 120.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 7 correto no tempo 120.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 0 2 3 ]
+O nodo 4 testou o nodo 0 correto no tempo 120.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 2 correto no tempo 120.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 3 correto no tempo 120.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 4 ]
+O nodo 5 testou o nodo 4 correto no tempo 120.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 7 6 ]
+O nodo 5 testou o nodo 7 correto no tempo 120.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 6 correto no tempo 120.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 1 0 3 2 ]
+O nodo 5 testou o nodo 1 correto no tempo 120.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 0 correto no tempo 120.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 3 correto no tempo 120.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 2 correto no tempo 120.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 7 ]
+O nodo 6 testou o nodo 7 correto no tempo 120.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 4 5 ]
+O nodo 6 testou o nodo 4 correto no tempo 120.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 5 correto no tempo 120.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 2 3 0 ]
+O nodo 6 testou o nodo 2 correto no tempo 120.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 3 correto no tempo 120.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 0 correto no tempo 120.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 6 ]
+O nodo 7 testou o nodo 6 correto no tempo 120.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 5 4 ]
+O nodo 7 testou o nodo 5 correto no tempo 120.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 4 correto no tempo 120.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 3 2 0 ]
+O nodo 7 testou o nodo 3 correto no tempo 120.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 2 correto no tempo 120.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 0 correto no tempo 120.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 0 ]
+O nodo 1 testou o nodo 0 correto no tempo 121.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 3 2 ]
+O nodo 1 testou o nodo 3 correto no tempo 121.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 2 correto no tempo 121.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 5 4 7 6 ]
+O nodo 1 testou o nodo 5 correto no tempo 121.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 4 correto no tempo 121.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 7 correto no tempo 121.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 6 correto no tempo 121.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 1 ]
+O nodo 0 testou o nodo 1 correto no tempo 150.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 2 3 ]
+O nodo 0 testou o nodo 2 correto no tempo 150.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 3 correto no tempo 150.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 4 5 6 7 ]
+O nodo 0 testou o nodo 4 correto no tempo 150.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 5 correto no tempo 150.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 6 correto no tempo 150.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 7 correto no tempo 150.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 3 ]
+O nodo 2 testou o nodo 3 correto no tempo 150.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 0 ]
+O nodo 2 testou o nodo 0 correto no tempo 150.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testará = [ 6 7 4 5 ]
+O nodo 2 testou o nodo 6 correto no tempo 150.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 7 correto no tempo 150.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 4 correto no tempo 150.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 2 testou o nodo 5 correto no tempo 150.0
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 2 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 2 ]
+O nodo 3 testou o nodo 2 correto no tempo 150.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 1 0 ]
+O nodo 3 testou o nodo 1 correto no tempo 150.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 0 correto no tempo 150.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testará = [ 7 6 5 4 ]
+O nodo 3 testou o nodo 7 correto no tempo 150.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 6 correto no tempo 150.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 5 correto no tempo 150.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 3 testou o nodo 4 correto no tempo 150.0
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 3 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 5 ]
+O nodo 4 testou o nodo 5 correto no tempo 150.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 6 7 ]
+O nodo 4 testou o nodo 6 correto no tempo 150.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 7 correto no tempo 150.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testará = [ 0 2 3 ]
+O nodo 4 testou o nodo 0 correto no tempo 150.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 2 correto no tempo 150.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 4 testou o nodo 3 correto no tempo 150.0
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 4 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 4 ]
+O nodo 5 testou o nodo 4 correto no tempo 150.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 7 6 ]
+O nodo 5 testou o nodo 7 correto no tempo 150.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 6 correto no tempo 150.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testará = [ 1 0 3 2 ]
+O nodo 5 testou o nodo 1 correto no tempo 150.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 0 correto no tempo 150.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 3 correto no tempo 150.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 5 testou o nodo 2 correto no tempo 150.0
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 5 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 7 ]
+O nodo 6 testou o nodo 7 correto no tempo 150.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 4 5 ]
+O nodo 6 testou o nodo 4 correto no tempo 150.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 5 correto no tempo 150.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testará = [ 2 3 0 ]
+O nodo 6 testou o nodo 2 correto no tempo 150.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 3 correto no tempo 150.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 6 testou o nodo 0 correto no tempo 150.0
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 6 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 6 ]
+O nodo 7 testou o nodo 6 correto no tempo 150.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 5 4 ]
+O nodo 7 testou o nodo 5 correto no tempo 150.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 4 correto no tempo 150.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testará = [ 3 2 0 ]
+O nodo 7 testou o nodo 3 correto no tempo 150.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 2 correto no tempo 150.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 7 testou o nodo 0 correto no tempo 150.0
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 7 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 0 ]
+O nodo 1 testou o nodo 0 correto no tempo 151.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 3 2 ]
+O nodo 1 testou o nodo 3 correto no tempo 151.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 2 correto no tempo 151.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testará = [ 5 4 7 6 ]
+O nodo 1 testou o nodo 5 correto no tempo 151.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 4 correto no tempo 151.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 7 correto no tempo 151.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 1 testou o nodo 6 correto no tempo 151.0
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 1 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 1 ]
+O nodo 0 testou o nodo 1 correto no tempo 180.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 2 3 ]
+O nodo 0 testou o nodo 2 correto no tempo 180.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 3 correto no tempo 180.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testará = [ 4 5 6 7 ]
+O nodo 0 testou o nodo 4 correto no tempo 180.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 5 correto no tempo 180.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 6 correto no tempo 180.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+O nodo 0 testou o nodo 7 correto no tempo 180.0
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+Pegando atualizações do testado.
+Vetor de status do nodo 0 = [ 0, 2, 0, 0, 0, 0, 0, 0 ]
+===================================================================================
+Fim da simulação!

@@ -1,0 +1,217 @@
+/*
+  Programa: Implementação aproximada do algoritmo VRing como parte da tarefa 4.
+    Os processos/nodos recebem atualizações acerca de outros processos quando testam um nodo correto.
+    Autor: Lucas Braz Cunha, aluno de Sistemas Distríbuidos ERE4
+    Evoluido a partir de um programa do professor Elias.
+    Data da última modificação: 15/11/2021
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "smpl.h"
+
+/* ---- Eventos ----*/
+#define test 1   // Um processo testa outro processo
+#define fault 2  // Um processo falha
+#define repair 3 // Um processo se recupera
+
+/* --- Descritor do nodo SMPL --- */
+typedef struct
+{
+  int id; /* Identificador da facility SMPL */
+  //  outras variáveis locais dos processos são declaradas aqui
+  int *state;                /* vetor de estado dos outros nodos/processos */
+  int *current_tested_nodes; /* vetor de nodos que foram testados na execucao corrente */
+} tnodo;
+
+tnodo *nodo;
+
+/* Calcula o próximo nodo no anel */
+int next_node(int n, int current_token)
+{
+  int result = current_token;
+  result += 1;
+  if (result >= n)
+  {
+    result = 0;
+  }
+  return result;
+}
+
+/* Função auxiliar para printar o vetor de states do nodo do indice */
+void print_state(tnodo *nodes, int N, int index)
+{
+  int i;
+  printf("Vetor de status do nodo %d = [", index);
+  for (i = 0; i < N - 1; i++)
+  {
+    printf(" %d,", nodes[index].state[i]);
+  }
+
+  printf(" %d ]\n", nodes[index].state[N - 1]);
+  return;
+}
+
+/*
+  Testa um nodo e faz o output da mensagem
+
+  nodes: array de nodos
+  N: tamanho do array
+  tester_token: indice do processo que realizarah o teste
+  tested_process: indice do processo que serah testado
+  time: instante de tempo em que o teste está sendo realizado
+*/
+int test_node(tnodo *nodes, int N, int tester_token, int tested_process, float time)
+{
+  int test_result;
+  test_result = status(nodes[tested_process].id);
+  if (test_result == 0)
+  {
+    if (nodes[tester_token].state[tested_process] % 2 == 1 || nodes[tester_token].state[tested_process] == -1)
+    {
+      nodes[tester_token].state[tested_process] += 1;
+    }
+    printf("O nodo %d testou o nodo %d correto no tempo %3.1f\n", tester_token, tested_process, time);
+  }
+  else
+  {
+    printf("O nodo %d testou o nodo %d falho no tempo %3.1f\n", tester_token, tested_process, time);
+    if (nodes[tester_token].state[tested_process] == -1)
+    {
+      nodes[tester_token].state[tested_process] += 1;
+    }
+    nodes[tester_token].state[tested_process] += 1;
+  }
+  print_state(nodes, N, tester_token);
+  return test_result;
+}
+
+/* Inicializa variáveis */
+void initialize(tnodo *nodes, int N, char *fa_name)
+{
+  int i, j;
+  for (i = 0; i < N; i++)
+  {
+    memset(fa_name, '\0', 5);
+    sprintf(fa_name, "%d", i);
+    nodo[i].id = facility(fa_name, 1);
+    nodes[i].state = (int *)malloc(sizeof(int) * N);
+    nodes[i].current_tested_nodes = (int *)malloc(sizeof(int) * N);
+    for (j = 0; j < N; j++)
+    {
+      nodo[i].state[j] = -1; // Unknown state
+      nodes[i].current_tested_nodes[j] = 0;
+    }
+    nodo[i].state[i] = 0;
+  }
+
+  return;
+}
+
+/* Limpa vetor para valores 0*/
+void reset_array(int *array, int N)
+{
+  int i;
+  for (i = 0; i < N; i++)
+  {
+    array[i] = 0;
+  }
+}
+
+/* Atualiza o vetor de estados com base nas novidades */
+void update_states(tnodo *nodo, int N, int current_node, int next_node)
+{
+  int i;
+  for (i = 0; i < N; i++)
+  {
+    if (i != current_node && nodo[current_node].current_tested_nodes[i] == 0)
+    {
+      nodo[current_node].state[i] = nodo[next_node].state[i];
+    }
+  }
+}
+
+int main(int argc, char *argv[])
+{
+  static int N, /* número total de processos, recebido da linha de comando */
+      token,    /* o processo que "está executando" em um instante de tempo */
+      event, r, i;
+
+  static char fa_name[5]; /* nome da facility */
+  int test_result,        /* resultado do teste */
+      n_token;            /* indice do proximo nodo para teste*/
+
+  if (argc != 2)
+  {
+    puts("Uso correto: tempo <num-nodos>");
+    exit(1);
+  }
+
+  N = atoi(argv[1]);
+  printf("Número de processos: %d\n", N);
+  smpl(0, "Um exemplo de simulação");
+  reset();
+  stream(1);
+
+  /* --- Inicialização de variáveis --- */
+  nodo = (tnodo *)malloc(sizeof(tnodo) * N);
+  initialize(nodo, N, fa_name);
+
+  /* --- escalonar os eventos --- */
+  for (i = 0; i < N; i++)
+  {
+    schedule(test, 30.0, i); /* estamos escalonando testes para todos os novos (processos) executarem no tempo(t) 30.0*/
+  }
+  schedule(fault, 31.0, 1);  /* o processo 1 falha no tempo 31 */
+  schedule(repair, 61.0, 1); /* o processo 1 recupera no tempo 61 */
+  schedule(fault, 61.0, 2);  /* o processo 2 falha no tempo 61 */
+  schedule(repair, 92.0, 2); /* o processo 2 recupera no tempo 92 */
+
+  /* Loop principal da simulação */
+  while (time() < 160.0)
+  {
+    cause(&event, &token);
+    switch (event)
+    {
+    case test:
+      if (status(nodo[token].id) != 0)
+        break; /* se o testador está falho: ele não testa */
+      for (i = 0; i < N; i++)
+      {
+        n_token = next_node(N, token + i);
+        test_result = test_node(nodo, N, token, n_token, time());
+        /* Adição para receber as informações do outro processo */
+        nodo[token].current_tested_nodes[n_token] = 1;
+        if (test_result == 0)
+        {
+          update_states(nodo, N, token, n_token);
+          printf("Atualização com base no vetor do testado realizada.\n");
+          print_state(nodo, N, token);
+          break;
+        }
+      }
+      reset_array(nodo[token].current_tested_nodes, N);
+      /* fim do trecho novo */
+      schedule(test, 30.0, token);
+      break;
+    case fault:
+      // Nodo "ocupado" -> falho
+      r = request(nodo[token].id, token, 0); /* O request causa uma facility of SMPL para estar "ocupada" */
+      if (r != 0)
+      {
+        puts("Não foi possível falhar o nodo...");
+        break;
+      }
+      printf("O nodo %d falhou no tempo %3.1f\n", token, time());
+      break;
+    case repair:
+      // Nodo não ocupado -> sem-falha
+      release(nodo[token].id, token); /* O release libera a facility SMPL */
+      printf("O nodo %d recuperou no tempo %3.1f\n", token, time());
+      schedule(test, 30.0, token);
+      break;
+    }
+  }
+
+  exit(0);
+}

@@ -1,0 +1,47 @@
+Número de processos: 4
+O nodo 0 testou o nodo 1 correto no tempo 30.0
+Vetor de status do nodo 0 = [ 0, 0, -1, -1 ]
+O nodo 1 testou o nodo 2 correto no tempo 30.0
+Vetor de status do nodo 1 = [ -1, 0, 0, -1 ]
+O nodo 2 testou o nodo 3 correto no tempo 30.0
+Vetor de status do nodo 2 = [ -1, -1, 0, 0 ]
+O nodo 3 testou o nodo 0 correto no tempo 30.0
+Vetor de status do nodo 3 = [ 0, -1, -1, 0 ]
+O nodo 1 falhou no tempo 31.0
+O nodo 0 testou o nodo 1 falho no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, -1, -1 ]
+O nodo 0 testou o nodo 2 correto no tempo 60.0
+Vetor de status do nodo 0 = [ 0, 1, 0, -1 ]
+O nodo 2 testou o nodo 3 correto no tempo 60.0
+Vetor de status do nodo 2 = [ -1, -1, 0, 0 ]
+O nodo 3 testou o nodo 0 correto no tempo 60.0
+Vetor de status do nodo 3 = [ 0, -1, -1, 0 ]
+O nodo 1 recuperou no tempo 61.0
+O nodo 2 falhou no tempo 61.0
+O nodo 0 testou o nodo 1 correto no tempo 90.0
+Vetor de status do nodo 0 = [ 0, 2, 0, -1 ]
+O nodo 3 testou o nodo 0 correto no tempo 90.0
+Vetor de status do nodo 3 = [ 0, -1, -1, 0 ]
+O nodo 1 testou o nodo 2 falho no tempo 91.0
+Vetor de status do nodo 1 = [ -1, 0, 1, -1 ]
+O nodo 1 testou o nodo 3 correto no tempo 91.0
+Vetor de status do nodo 1 = [ -1, 0, 1, 0 ]
+O nodo 2 recuperou no tempo 92.0
+O nodo 0 testou o nodo 1 correto no tempo 120.0
+Vetor de status do nodo 0 = [ 0, 2, 0, -1 ]
+O nodo 3 testou o nodo 0 correto no tempo 120.0
+Vetor de status do nodo 3 = [ 0, -1, -1, 0 ]
+O nodo 1 testou o nodo 2 correto no tempo 121.0
+Vetor de status do nodo 1 = [ -1, 0, 2, 0 ]
+O nodo 2 testou o nodo 3 correto no tempo 122.0
+Vetor de status do nodo 2 = [ -1, -1, 0, 0 ]
+O nodo 0 testou o nodo 1 correto no tempo 150.0
+Vetor de status do nodo 0 = [ 0, 2, 0, -1 ]
+O nodo 3 testou o nodo 0 correto no tempo 150.0
+Vetor de status do nodo 3 = [ 0, -1, -1, 0 ]
+O nodo 1 testou o nodo 2 correto no tempo 151.0
+Vetor de status do nodo 1 = [ -1, 0, 2, 0 ]
+O nodo 2 testou o nodo 3 correto no tempo 152.0
+Vetor de status do nodo 2 = [ -1, -1, 0, 0 ]
+O nodo 0 testou o nodo 1 correto no tempo 180.0
+Vetor de status do nodo 0 = [ 0, 2, 0, -1 ]
